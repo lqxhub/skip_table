@@ -76,7 +76,7 @@ func TestNewSkipTable(t *testing.T) {
 		fmt.Printf("%f  ", s.f)
 	}
 	fmt.Println()
-	list := st.GetNodeByRank(1, -1)
+	list := st.GetNodeByRank(1, 10000)
 	for _, node := range list {
 		fmt.Printf("%f  ", node.score)
 	}
@@ -97,7 +97,7 @@ func TestSkipList_GetNodeByRank(t *testing.T) {
 
 	}
 	fmt.Println()
-	list := st.GetNodeByRank(1, -1)
+	list := st.GetNodeByRank(1, 10000)
 	for _, node := range list {
 		fmt.Printf("%f  ", node.score)
 	}
@@ -199,7 +199,7 @@ func TestSkipList_UpdateScore(t *testing.T) {
 	insert(st, N)
 	fmt.Println()
 
-	list := st.GetNodeByRank(1, -1)
+	list := st.GetNodeByRank(1, N)
 	for _, node := range list {
 		fmt.Printf("%v  ", node.score)
 	}
@@ -212,7 +212,7 @@ func TestSkipList_UpdateScore(t *testing.T) {
 	st.UpdateScore(nodes[0], -nodes[0].score)
 
 	fmt.Println()
-	list = st.GetNodeByRank(1, -1)
+	list = st.GetNodeByRank(1, N)
 	for _, node := range list {
 		fmt.Printf("%v  ", node.score)
 	}
